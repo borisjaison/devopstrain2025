@@ -4,17 +4,17 @@ metadata:
   name: payment-gateway-dev
   namespace: argocd
 spec:
-  project: default
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/borisjaison/devopstrain2025_rollout.git
+    repoURL: https://github.com/borisjaison/devopstrain2025.git
     targetRevision: HEAD
     path: payment-gateway
     helm:
       valueFiles:
         - values/dev.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: dev
+  project: default
   syncPolicy:
     automated:
       prune: true
