@@ -3,6 +3,6 @@ replicaCount: 1
 image:
   repository: nginx
   tag: latest
-git add . && git commit -m "Updated dev image" && git push
+#git add . && git commit -m "Updated dev image" && git push
 service:
   nodePort: 30001
